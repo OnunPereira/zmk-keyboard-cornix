@@ -320,17 +320,18 @@
         WoW_layer {
             display-name = "WoW";
 
-            // Toggled from Adjust (&tog 8). Everything passes through to the
-            // default layer except the thumb keys that normally hold Escape
-            // (LOWER) and momentary Symbol/Mix layers, which become held
-            // modifiers here so any hotbar key can be "multiplied" by
-            // Alt / Ctrl / Ctrl+Shift without a pinky stretch.
+            // Toggled from Adjust (&tog 8). Home row drops the hold-tap mods
+            // (movement keys like S/D/F need to register as held keys
+            // instantly, not resolve to a modifier after the tap-term).
+            // Thumb keys that normally hold Escape (LOWER) and momentary
+            // Symbol/Mix layers become held modifiers here so any hotbar
+            // key can be "multiplied" by Alt / Ctrl / Ctrl+Shift.
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LALT  &kp LCTRL  &trans                      &trans  &kp LC(LSHFT)  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &trans   &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A    &kp S    &kp D    &kp F      &kp G                   &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
+&trans  &trans   &trans   &trans   &trans     &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &kp LALT &kp LCTRL  &trans                  &trans  &kp LC(LSHFT)  &trans  &trans  &trans  &trans
             >;
         };
     };
