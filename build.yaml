@@ -14,11 +14,11 @@
 ---
 include:
   - board: cornix_left//zmk
-    # shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_left_default_nosd
 
   - board: cornix_right//zmk
-    # shield: cornix_indicator
+    shield: cornix_indicator
     artifact-name: cornix_right_nosd
 
   - board: cornix_right//zmk
