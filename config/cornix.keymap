@@ -327,15 +327,18 @@
             // sits), which keeps its Escape tap but now also holds
             // Ctrl+Shift. Alt sits on the thumb slot that used to be the
             // secondary Escape/Debug-layer key, Ctrl on the LOWER slot.
-            // The exit key is deliberately kept on the RIGHT thumb,
-            // replacing the Backspace-hold slot, so it can't be misclicked
-            // while the left thumb is busy.
+            // The corner key (normally &mo 4 / Adjust access) is a plain
+            // Shift here instead, freeing up an extra combo slot; Adjust
+            // is only reachable after exiting this layer via [EXIT]. The
+            // exit key sits on the RIGHT thumb, just outside the
+            // Backspace-hold slot (which is preserved), so it can't be
+            // misclicked while the left thumb is busy.
 
             bindings = <
 &trans  &trans   &trans   &trans   &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &hm LC(LSHFT) ESC  &kp A    &kp S    &kp D    &kp F      &kp G                   &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
-&trans  &trans   &trans   &trans   &trans     &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LALT  &kp LCTRL  &trans            &trans  &trans  &tog 8  &trans  &trans  &trans
+&kp LSHFT  &trans   &trans   &trans   &trans     &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp LALT  &kp LCTRL  &trans            &trans  &trans  &trans  &tog 8  &trans  &trans
             >;
         };
     };
