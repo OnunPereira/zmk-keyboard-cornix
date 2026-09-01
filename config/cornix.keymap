@@ -134,7 +134,7 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
@@ -336,9 +336,9 @@
 
             bindings = <
 &trans  &trans   &trans   &trans   &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&hm LC(LSHFT) ESC  &kp A    &kp S    &kp D    &kp F      &kp G                   &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
+&hm LC(LSHFT) ESC  &kp A    &kp S    &kp D    &kp F      &kp G                   &trans  &trans  &trans  &trans  &trans   &trans
 &kp LSHFT  &trans   &trans   &trans   &trans     &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LALT  &kp LCTRL  &trans            &trans  &trans  &trans  &tog 8  &trans  &trans
+&trans  &trans  &trans  &kp LALT  &kp LCTRL  &kp SPACE         &trans  &trans  &trans  &tog 8  &trans  &trans
             >;
         };
     };
