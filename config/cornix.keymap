@@ -20,7 +20,7 @@
 // quick tapping for shift
 
 #define HM_TAPPING_TERM_FAST 200
-#define HM_PRIOR_IDLE 70
+#define HM_PRIOR_IDLE 150
 #define BASE 0
 #define WIN 1
 #define LOWER 2
@@ -320,18 +320,22 @@
         WoW_layer {
             display-name = "WoW";
 
-            // Toggled from Adjust (&tog 8). Home row drops the hold-tap mods
-            // (movement keys like S/D/F need to register as held keys
-            // instantly, not resolve to a modifier after the tap-term).
-            // Thumb keys that normally hold Escape (LOWER) and momentary
-            // Symbol/Mix layers become held modifiers here so any hotbar
-            // key can be "multiplied" by Alt / Ctrl / Ctrl+Shift.
+            // Left home row drops the hold-tap mods (movement keys like
+            // S/D/F need to register as held keys instantly, not resolve
+            // to a modifier after the tap-term) EXCEPT the actual Escape
+            // key (home-row position, same column as Caps Lock normally
+            // sits), which keeps its Escape tap but now also holds
+            // Ctrl+Shift. Alt sits on the thumb slot that used to be the
+            // secondary Escape/Debug-layer key, Ctrl on the LOWER slot.
+            // The exit key is deliberately kept on the RIGHT thumb,
+            // replacing the Backspace-hold slot, so it can't be misclicked
+            // while the left thumb is busy.
 
             bindings = <
 &trans  &trans   &trans   &trans   &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp A    &kp S    &kp D    &kp F      &kp G                   &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
+&hm LC(LSHFT) ESC  &kp A    &kp S    &kp D    &kp F      &kp G                   &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
 &trans  &trans   &trans   &trans   &trans     &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans   &kp LALT &kp LCTRL  &trans                  &trans  &kp LC(LSHFT)  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp LALT  &kp LCTRL  &trans            &trans  &trans  &tog 8  &trans  &trans  &trans
             >;
         };
     };
